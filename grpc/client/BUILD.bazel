@@ -6,7 +6,7 @@ go_library(
     importpath = "github.com/jun06t/bazel-sample/grpc/client",
     visibility = ["//visibility:private"],
     deps = [
-        "@com_github_jun06t_bazel_sample//grpc/proto:go_default_library",
+        "//proto",
         "@org_golang_google_grpc//:go_default_library",
     ],
 )
