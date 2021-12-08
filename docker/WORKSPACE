@@ -35,7 +35,7 @@ go_repository(
 )
 
 local_repository(
-    name = "my_uuid",
+    name = "my_uuid_relative",
     path = "../basic",
 )
 
