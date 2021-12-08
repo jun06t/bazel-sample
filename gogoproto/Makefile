@@ -12,8 +12,7 @@ gogoproto: proto_format
 	protoc \
 	-I=./ \
 	-I=${GOPATH}/src \
-	--gogo_out=plugins=grpc:./dist \
-	--go_opt=module=github.com/jun06t/bazel-sample/gogoproto/proto \
+	--gogo_out=${GOPATH}/src \
 	./proto/*.proto
 
 proto_format:
