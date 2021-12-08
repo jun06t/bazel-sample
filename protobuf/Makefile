@@ -4,15 +4,7 @@ proto: proto_format
 	protoc \
 	-I=./ \
 	-I=${GOPATH}/src \
-	--go_out=plugins=grpc:./dist \
-	--go_opt=module=github.com/jun06t/bazel-sample/protobuf/proto \
-	./proto/*.proto
-
-gogoproto: proto_format
-	protoc \
-	-I=./ \
-	-I=${GOPATH}/src \
-	--gogo_out=plugins=grpc:./dist \
+	--go_out=./dist \
 	--go_opt=module=github.com/jun06t/bazel-sample/protobuf/proto \
 	./proto/*.proto
 
