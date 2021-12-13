@@ -43,13 +43,6 @@ protobuf_deps()
 # The first declaration of an external repository "wins".
 ############################################################
 
-go_repository(
-    name = "com_github_gogo_protobuf",
-    importpath = "github.com/gogo/protobuf",
-    sum = "h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=",
-    version = "v1.3.2",
-)
-
 go_rules_dependencies()
 
 go_register_toolchains(version = "1.17.2")
