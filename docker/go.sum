@@ -1,4 +1,2 @@
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
-github.com/jun06t/bazel-sample/basic v0.0.0-20211203115456-a1418e4cc582 h1:oHRxdF9F7HYMieZc2v6wRIyeiSzX8uwdv8S4QGLG6xs=
-github.com/jun06t/bazel-sample/basic v0.0.0-20211203115456-a1418e4cc582/go.mod h1:I4Et5aOHwF44IYVna7Kc1fIVqrZ6tPd0UZW/v6ziYi8=
