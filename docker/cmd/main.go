@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/jun06t/bazel-sample/basic/uuid"
+	"github.com/jun06t/bazel-sample/docker/uuid"
 )
 
 func main() {
