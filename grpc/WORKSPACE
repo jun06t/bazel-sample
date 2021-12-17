@@ -40,10 +40,10 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 # The first declaration of an external repository "wins".
 ############################################################
 
-load("//:repositories.bzl", "go_repositories")
+load("//:deps.bzl", "go_dependencies")
 
-# gazelle:repository_macro repositories.bzl%go_repositories
-go_repositories()
+# gazelle:repository_macro deps.bzl%go_dependencies
+go_dependencies()
 
 go_rules_dependencies()
 
