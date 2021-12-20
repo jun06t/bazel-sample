@@ -6,7 +6,6 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/jun06t/bazel-sample/docker/cmd",
     visibility = ["//visibility:private"],
-    deps = ["//uuid"],
 )
 
 go_binary(
@@ -17,10 +16,11 @@ go_binary(
 
 container_image(
     name = "image",
-    base = "@alpine_linux_amd64//image",
+#    base = "@alpine_linux_amd64//image",
+    base = "@distroless_linux_amd64//image",
     entrypoint = ["/cmd"],
     files = [":cmd"],
-    repository = "jun06t"
+    repository = "jun06t",
 )
 
 container_push(

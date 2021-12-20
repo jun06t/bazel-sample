@@ -58,16 +58,17 @@ container_pull(
     tag = "3.15",
 )
 
+container_pull(
+    name = "distroless_linux_amd64",
+    registry = "gcr.io",
+    repository = "distroless/base",
+    tag = "latest",
+)
+
 ############################################################
 # Define your own dependencies here using go_repository.
 # Else, dependencies declared by rules_go/gazelle will be used.
 # The first declaration of an external repository "wins".
 ############################################################
 
-go_repository(
-    name = "com_github_google_uuid",
-    importpath = "github.com/google/uuid",
-    sum = "h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=",
-    version = "v1.3.0",
-)
 

@@ -1,15 +1,23 @@
 package main
 
 import (
-	"log"
-
-	"github.com/jun06t/bazel-sample/docker/uuid"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
 )
 
 func main() {
-	id, err := uuid.Generate()
+	resp, err := http.Get("https://google.com")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
+		os.Exit(1)
 	}
-	log.Println(id)
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	fmt.Println(len(body))
 }
