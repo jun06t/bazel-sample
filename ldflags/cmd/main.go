@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fmt.Println("v4")
+	fmt.Println("v5")
 	http.HandleFunc("/alive", alive.Handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

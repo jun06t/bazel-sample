@@ -1,2 +1,2 @@
-build --stamp --workspace_status_command=$(PWD)/tag.sh
-run --stamp --workspace_status_command=$(PWD)/tag.sh
+build --stamp --workspace_status_command=$(pwd)/tag.sh
+run --stamp --workspace_status_command=$(pwd)/tag.sh
