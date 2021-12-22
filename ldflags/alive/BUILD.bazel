@@ -5,4 +5,8 @@ go_library(
     srcs = ["alive.go"],
     importpath = "github.com/jun06t/bazel-sample/ldflags/alive",
     visibility = ["//visibility:public"],
+    x_defs = {
+        "BuildVersion": "{GIT_COMMIT}",
+        "Timestamp": "{DATE}",
+    },
 )

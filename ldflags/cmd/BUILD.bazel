@@ -12,8 +12,8 @@ go_binary(
     name = "cmd",
     embed = [":cmd_lib"],
     visibility = ["//visibility:public"],
-    x_defs = {
-        "github.com/jun06t/bazel-sample/ldflags/alive.BuildVersion": "{GIT_COMMIT}",
-        "github.com/jun06t/bazel-sample/ldflags/alive.Timestamp": "{DATE}",
-    },
+#    x_defs = {
+#        "github.com/jun06t/bazel-sample/ldflags/alive.BuildVersion": "{GIT_COMMIT}",
+#        "github.com/jun06t/bazel-sample/ldflags/alive.Timestamp": "{DATE}",
+#    },
 )

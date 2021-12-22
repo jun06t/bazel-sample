@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -8,6 +9,7 @@ import (
 )
 
 func main() {
+	fmt.Println("v4")
 	http.HandleFunc("/alive", alive.Handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
