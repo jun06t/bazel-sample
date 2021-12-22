@@ -29,5 +29,5 @@ container_push(
     image = ":image",
     registry = "index.docker.io",
     repository = "jun06t/bazel-sample-cmd",
-    tag = "latest",
+    tag = "$(IMAGE_TAG)",
 )
