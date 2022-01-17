@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "dice",
+    srcs = ["dice.go"],
+    importpath = "github.com/jun06t/bazel-sample/test/dice",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_go_redis_redis_v8//:go_default_library"],
+)
+
+go_test(
+    name = "dice_test",
+    srcs = ["dice_test.go"],
+    embed = [":dice"],
+    deps = ["@com_github_stretchr_testify//assert:go_default_library"],
+)
