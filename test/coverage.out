@@ -1,0 +1,11 @@
+mode: set
+github.com/jun06t/bazel-sample/test/dice/dice.go:18.21,22.2 3 100
+github.com/jun06t/bazel-sample/test/dice/dice.go:24.63,27.16 3 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:30.2,30.21 1 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:27.16,29.3 1 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:33.65,35.16 2 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:38.2,38.15 1 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:35.16,37.3 1 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:41.73,46.16 3 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:49.2,49.17 1 0
+github.com/jun06t/bazel-sample/test/dice/dice.go:46.16,48.3 1 0

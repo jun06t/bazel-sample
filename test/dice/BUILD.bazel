@@ -5,12 +5,18 @@ go_library(
     srcs = ["dice.go"],
     importpath = "github.com/jun06t/bazel-sample/test/dice",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_go_redis_redis_v8//:go_default_library"],
+    deps = ["@com_github_go_redis_redis_v8//:redis"],
 )
 
 go_test(
     name = "dice_test",
-    srcs = ["dice_test.go"],
+    srcs = [
+        "dice_integration_test.go",
+        "dice_test.go",
+    ],
     embed = [":dice"],
-    deps = ["@com_github_stretchr_testify//assert:go_default_library"],
+    deps = [
+        "@com_github_stretchr_testify//assert",
+        "@com_github_stretchr_testify//require",
+    ],
 )

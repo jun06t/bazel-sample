@@ -1,0 +1,5 @@
+build --show_timestamps --verbose_failures --incompatible_strict_action_env
+test --test_output=errors --test_verbose_timeout_warnings
+
+test --@io_bazel_rules_go//go/config:race
+

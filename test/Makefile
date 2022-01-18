@@ -1,30 +1,29 @@
 BAZEL := bazelisk
-BAZEL_FLAGS =
-BAZEL_COMMAND_FLAGS =
 
-ifdef CI
-	BAZEL_COMMAND_FLAGS += --config=ci
-endif
-
-TESTABLE := $(shell ${BAZEL} ${BAZEL_FLAGS} query 'kind("go_test", //go/...)')
+TESTABLE := $(shell ${BAZEL} query 'kind("go_test", //...)')
 
 .PHONY: test
 test:
-	${BAZEL} ${BAZEL_FLAGS} test ${BAZEL_COMMAND_FLAGS} -- ${TESTABLE}
+	${BAZEL} test -- ${TESTABLE}
 
 .PHONY: test-race
 test-race:
-	${BAZEL} ${BAZEL_FLAGS} test ${BAZEL_COMMAND_FLAGS} --@io_bazel_rules_go//go/config:race -- ${TESTABLE}
+	${BAZEL} test --@io_bazel_rules_go//go/config:race -- ${TESTABLE}
 
 .PHONY: test-integration
 test-integration:
-	${BAZEL} ${BAZEL_FLAGS} test ${BAZEL_COMMAND_FLAGS} --@io_bazel_rules_go//go/config:tags=integration -- ${TESTABLE}
+	${BAZEL} test --@io_bazel_rules_go//go/config:tags=integration -- ${TESTABLE}
+
+coverage:
+	${BAZEL} coverage -- ${TESTABLE}
+	echo "mode: set" > coverage.out
+	find bazel-out/ -name "coverage.dat" | xargs tail -q -n +2 >> coverage.out
 
 .PHONY: gazelle
 gazelle:
-	${GO_ENV} ${BAZEL} ${BAZEL_FLAGS} run //:gazelle -- update -build_tags integration
+	${BAZEL} run //:gazelle -- update -build_tags integration
 
 .PHONY: gazelle-update-repos
 gazelle-update-repos:
-	${GO_ENV} ${BAZEL} ${BAZEL_FLAGS} run //:gazelle-update-repos
+	${BAZEL} run //:gazelle-update-repos
 
