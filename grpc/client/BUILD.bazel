@@ -14,5 +14,6 @@ go_library(
 go_binary(
     name = "client",
     embed = [":client_lib"],
+    pure = "on",
     visibility = ["//visibility:public"],
 )

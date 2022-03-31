@@ -11,6 +11,7 @@ go_library(
 go_binary(
     name = "cmd",
     embed = [":cmd_lib"],
+    pure = "on",
     visibility = ["//visibility:public"],
 #    x_defs = {
 #        "github.com/jun06t/bazel-sample/ldflags/alive.BuildVersion": "{GIT_COMMIT}",

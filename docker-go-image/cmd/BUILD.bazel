@@ -6,6 +6,7 @@ go_image(
     name = "image",
     srcs = ["main.go"],
     importpath = "github.com/jun06t/bazel-sample/docker-go-image/cmd",
+    pure = "on",
     visibility = ["//visibility:private"],
 )
 
