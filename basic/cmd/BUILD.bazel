@@ -12,4 +12,5 @@ go_binary(
     name = "cmd",
     embed = [":cmd_lib"],
     visibility = ["//visibility:public"],
+    pure = "on",
 )
