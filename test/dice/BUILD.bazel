@@ -14,9 +14,18 @@ go_test(
         "dice_integration_test.go",
         "dice_test.go",
     ],
+    data = [
+        "test1.yaml",
+        ":test_dir",
+    ],
     embed = [":dice"],
     deps = [
         "@com_github_stretchr_testify//assert",
         "@com_github_stretchr_testify//require",
     ],
+)
+
+filegroup(
+    name = "test_dir",
+    srcs = glob(["testdata/**"]),
 )
