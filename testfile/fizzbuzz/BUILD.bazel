@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "fizzbuzz",
+    srcs = ["fizzbuzz.go"],
+    importpath = "github.com/jun06t/bazel-sample/testfile/fizzbuzz",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "fizzbuzz_test",
+    srcs = ["fizzbuzz_test.go"],
+    data = glob(["testdata/**"]),
+    embed = [":fizzbuzz"],
+)
