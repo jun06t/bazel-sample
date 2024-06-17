@@ -11,4 +11,5 @@ go_test(
     name = "fizzbuzz2_test",
     srcs = ["fizzbuzz_test.go"],
     embed = [":fizzbuzz2"],
+    data = ["//fizzbuzz:test_dir"],
 )
