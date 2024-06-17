@@ -7,7 +7,7 @@ import (
 )
 
 func TestFizzBuzz(t *testing.T) {
-	goldenFile := "testdata/golden.txt"
+	goldenFile := "../fizzbuzz/testdata/golden.txt"
 	expectedOutput, err := os.ReadFile(goldenFile)
 	if err != nil {
 		t.Fatalf("failed reading golden file: %s", err)

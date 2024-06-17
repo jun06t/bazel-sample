@@ -4,9 +4,6 @@ import (
 	"fmt"
 )
 
-// FizzBuzz function returns "Fizz" for multiples of 3,
-// "Buzz" for multiples of 5, "FizzBuzz" for multiples of both 3 and 5,
-// and the number itself for all other cases.
 func FizzBuzz(n int) string {
 	switch {
 	case n%15 == 0:

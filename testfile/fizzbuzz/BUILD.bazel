@@ -10,6 +10,12 @@ go_library(
 go_test(
     name = "fizzbuzz_test",
     srcs = ["fizzbuzz_test.go"],
-    data = glob(["testdata/**"]),
+    data = [":test_dir"],
     embed = [":fizzbuzz"],
+)
+
+filegroup(
+    name = "test_dir",
+    srcs = glob(["testdata/**"]),
+    visibility = ["//visibility:public"],
 )
