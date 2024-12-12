@@ -10,8 +10,12 @@ go_library(
 go_test(
     name = "fizzbuzz_test",
     srcs = ["fizzbuzz_test.go"],
-    data = ["testdata/golden.txt"],
+    data = [":test_dir"],
     embed = [":fizzbuzz"],
 )
 
-exports_files(["testdata/golden.txt"])
+filegroup(
+    name = "test_dir",
+    srcs = glob(["testdata/**"]),
+    visibility = ["//visibility:public"],
+)
